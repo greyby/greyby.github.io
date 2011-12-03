@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[greyby's Blog]]></title>
   <link href="http://greyby.github.com/atom.xml" rel="self"/>
   <link href="http://greyby.github.com/"/>
-  <updated>2011-12-03T11:51:12+08:00</updated>
+  <updated>2011-12-03T12:30:05+08:00</updated>
   <id>http://greyby.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[greyby]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[firt post]]></title>
+    <link href="http://greyby.github.com/blog/2011/12/03/firt-post/"/>
+    <updated>2011-12-03T11:59:00+08:00</updated>
+    <id>http://greyby.github.com/blog/2011/12/03/firt-post</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
 </feed>
