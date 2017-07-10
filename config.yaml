@@ -1,0 +1,57 @@
+baseurl: "http://greyby.github.io/"
+languagecode: "zh-CN"
+title: "找不着北"
+paginate: 5
+disqusshortname: "greyby"
+copyright: "© 2017"
+pluralizelisttitles: false
+theme: "casper"
+metaDataFormat: "yaml"
+
+contentdir: "content"
+dataDir: "data"
+defaultLayout: "post"
+layoutdir: "layouts"
+paginatePath: "page"
+publishdir: "public"
+staticdir: "static"
+themesdir: "themes"
+# true url abc.html
+# false url abc/
+# uglyurls: true
+
+params:
+  author: "greyby"
+  authorlocation: "Beijing, China"
+  authorwebsite: "http://greyby.github.io/"
+  bio: "Developer"
+  cover: ""
+  description: "Dream big, work smart, deliver fast"
+  hideHUGOSupport: false
+  logo: ""
+  # githubName: "greyby"
+  # twitterName: "greyby"
+
+  # Setting a value will load highlight.js and enable syntax highlighting using the style selected.
+  # See https://github.com/isagalaev/highlight.js/tree/master/src/styles for available styles
+  # A preview of above styles can be viewed at https://highlightjs.org/static/demo/
+  # hjsStyle: "github-gist"
+  hjsStyle: "ocean"
+  # RSSLink: "http://feeds.feedburner.com/...
+
+menu:
+  main:
+    - name: "Home"
+      url: "/"
+      weight: 105
+      identifier: "home"
+    - name: "About"
+      weight: 104
+      identifier: "about"
+      url: "/about"  
+    - name: "Github Repos"
+      url: "https://github.com/greyby"
+      weight: 103
+
+permalinks:
+  post: /:year/:month/:day/:slug/
