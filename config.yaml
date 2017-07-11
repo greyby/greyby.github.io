@@ -1,4 +1,4 @@
-baseurl: "http://greyby.github.io/"
+baseurl: "https://greyby.github.io/"
 languagecode: "zh-CN"
 title: "找不着北"
 paginate: 5
@@ -23,7 +23,7 @@ themesdir: "themes"
 params:
   author: "greyby"
   authorlocation: "Beijing, China"
-  authorwebsite: "http://greyby.github.io/"
+  authorwebsite: "https://greyby.github.io/"
   bio: "Developer"
   cover: ""
   description: "Dream big, work smart, deliver fast"
