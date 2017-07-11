@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  	<meta property="og:title" content="找不着北" />
+  	<meta property="og:site_name" content="找不着北" />
+  	<meta property="og:url" content="https://greyby.github.io/" />
+
+    
+        
+    
+
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Dream big, work smart, deliver fast" />
+    
+
+    <title>找不着北</title>
+
+    
+    <meta name="description" content="Dream big, work smart, deliver fast" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/ocean.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+      
+      
+        <link href="https://greyby.github.io/index.xml" rel="alternate" type="application/rss+xml" title="找不着北" />
+      
+    
+    <meta name="generator" content="Hugo 0.25" />
+
+    <link rel="canonical" href="https://greyby.github.io/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "publisher": {
+        "@type": "Person",
+        "name": ,
+        
+        "url": https://greyby.github.io/,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": Developer
+        
+    },
+    "url": https://greyby.github.io/,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": https://greyby.github.io/
+    },
+    "description": Dream big, work smart, deliver fast
+}
+  </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened nav-current" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/about">About</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://github.com/greyby">Github Repos</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="https://greyby.github.io/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header no-cover">
+
+
+    <nav class="main-nav overlay clearfix">
+        
+        
+            <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+        
+    </nav>
+    <div class="vertical">
+        <div class="main-header-content inner">
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <h1 class="page-title">找不着北</h1>
+            <h2 class="page-description">Dream big, work smart, deliver fast</h2>
+        </div>
+    </div>
+    <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
+</header>
+
+
+<main id="content" class="content" role="main">
+
+    
+        
+    
+
+    
+        
+            
+        
+    
+
+    
+    
+    
+
+    <div class="extra-pagination inner">
+        <nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
+
+    </div>
+
+    
+        
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/2017/07/11/productive-macos-hammerspoon/">打造 macOS 的生产力环境 - Hammerspoon</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>起因 MacBook Pro 加外接显示器现在差不多是开发的标配了。用外接显示器爽是爽，但作为一个只用 Trackpad 没有鼠标的用户，每次在不同屏幕间切换光标，手指至少要在 Trackpad 移动一半的距离，效率非常差。搜了一下，有 Sizeup 这种商业软件有这个功能，但价格 12.99 刀，真是不便宜。接着搜看到有人用 Hammerspoon 做窗口管理的文章，感觉用这个应该可以实现，就找资料研究了一下。
+介绍 Hammerspoon 是 macOS 上一个强大的自动化工具，是一款开源软件，但安装之后 Hammerspoon 默认什么功能也没有，所有的功能都在 Lua 脚本中，需要用户自己编写。Hammerspoon 可以让用户通过 Lua 脚本直接调用 macOS 提供的 API，能做的事情既有自定义快捷键这种简单操作，也能实现连上家里 Wi-Fi 后自动打开某视频网站、到办公室后自动静音等复杂功能。官方提供的 API 已经非常丰富，包括管理应用程序、管理系统音频设备、画图、网格化窗口等，详细了解可以直接看官方的 API。
+安装配置 可以直接到官方下载安装，用 Homebrew-Cask 的用户也可以直接在命令行安装 brew cask install hammerspoon。启动 Hammerspoon 后，程序会自动加载配置，配置文件位于 ~/.hammerspoon/init.lua。可以在设置中取消显示 Dock ICON 的选项，这样 Hammerspoon 的图标就不会显示在 Dock 上。
+使用 官方文档写的很细致，要好好了解的可以直接去看。这里只用一个经典的 Hello World 程序感受一下 Hammerspoon 的简单。
+vi ~/.hammerspoon/init.lua 添加以下内容，然后重新加载配置文件，就可以使用快捷键 Control + Alt + H 在通知中心弹出一个 Hello Hammerspoon! <a class="read-more" href="/2017/07/11/productive-macos-hammerspoon/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+        
+            
+            
+                greyby
+            
+        
+
+        
+        <time class="post-date" datetime="2017-07-11T07:46:23&#43;08:00">
+            11 Jul 2017
+        </time>
+    </footer>
+</article>
+
+    
+
+    <nav class="pagination" role="navigation">
+	
+	<span class="page-number">Page 1 of 1</span>
+	
+</nav>
+
+
+
+</main>
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">找不着北</a> © 2017</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+
