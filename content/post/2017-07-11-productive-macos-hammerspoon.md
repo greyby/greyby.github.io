@@ -1,11 +1,9 @@
 ---
-title: "Productive macOS Hammerspoon"
+title: "打造 macOS 的生产力环境 - Hammerspoon"
 date: 2017-07-11T07:46:23+08:00
 slug: "Productive macOS Hammerspoon"
 draft: true
 ---
-
-# 打造 macOS 的生产力环境 - Hammerspoon
 
 ## 起因
 
