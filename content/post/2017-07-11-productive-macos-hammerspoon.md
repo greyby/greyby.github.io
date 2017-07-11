@@ -2,6 +2,7 @@
 title: "打造 macOS 的生产力环境 - Hammerspoon"
 date: 2017-07-11T07:46:23+08:00
 slug: "Productive macOS Hammerspoon"
+description: "使用 Hammerspoon 进行窗口管理、快速启动、快捷键绑定等，提升 macOS 的生产力"
 ---
 
 ## 起因
