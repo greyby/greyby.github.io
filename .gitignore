@@ -19,7 +19,6 @@
 
 ### Hugo ###
 hugo.exe
-/public/
 ### macOS ###
 *.DS_Store
 .AppleDouble
