@@ -5,7 +5,7 @@ go:
 
 env:
     global:
-        - SSH_KEY="travis_key"
+        - SSH_KEY="id_rsa"
         - GIT_NAME="greyby"
         - GIT_EMAIL="greyby.5@gmail.com"
         - SOURCE_DIR="public"
