@@ -1,18 +1,15 @@
 language: go
-
 go:
   - "1.8.3"
-
 env:
     global:
-        - SSH_KEY="id_rsa"
+        - SSH_KEY="travis_key"
         - GIT_NAME="greyby"
         - GIT_EMAIL="greyby.5@gmail.com"
         - SOURCE_DIR="public"
         - DEPLOY_BRANCH="source"
-
 before_install:
-  - openssl aes-256-cbc -K $encrypted_f97d509cf112_key -iv $encrypted_f97d509cf112_iv -in id_rsa.enc -out id_rsa -d
+  - openssl aes-256-cbc -K $encrypted_f97d509cf112_key -iv $encrypted_f97d509cf112_iv -in travis_key.enc -out travis_key -d
 
 before_script:
   - git clone --branch v2 https://github.com/go-yaml/yaml $GOPATH/src/gopkg.in/yaml.v2
@@ -23,4 +20,5 @@ script:
   - hugo
 
 after_success:
+  - chmod a+x ./scripts/deploy.sh
   - ./scripts/deploy.sh
