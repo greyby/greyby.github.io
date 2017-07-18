@@ -21,7 +21,6 @@ before_script:
   - go get -u -v github.com/gohugoio/hugo
 
 script:
-  - git clone https://github.com/greyby/hugo-theme-casper.git ./themes/casper
   - hugo
 
 after_success:
