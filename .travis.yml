@@ -16,7 +16,7 @@ env:
 before_install:
   - openssl aes-256-cbc -K $encrypted_f97d509cf112_key -iv $encrypted_f97d509cf112_iv -in travis_key.enc -out travis_key -d
 
-install:
+before_script:
   - go get gopkg.in/yaml.v2
   - go get -u -v github.com/gohugoio/hugo
 
