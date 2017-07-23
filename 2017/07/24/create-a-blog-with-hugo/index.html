@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  	<meta property="og:title" content="用 Hugo 搭建个人 Blog &middot; 找不着北" />
+  	<meta property="og:site_name" content="找不着北" />
+  	<meta property="og:url" content="https://greyby.github.io/2017/07/24/create-a-blog-with-hugo/" />
+
+    
+        
+    
+
+    
+    <meta property="og:description" content="使用 Hugo 搭建个人 Blog, 通过 Travis 自动把文章发布到 Gihub Pages" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2017-07-24T01:05:44&#43;08:00" />
+
+    
+    
+
+    <title>用 Hugo 搭建个人 Blog &middot; 找不着北</title>
+
+    
+    <meta name="description" content="使用 Hugo 搭建个人 Blog, 通过 Travis 自动把文章发布到 Gihub Pages" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
+
+    
+
+    
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/ocean.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        
+        <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+      
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="找不着北" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.26-DEV" />
+
+    <link rel="canonical" href="https://greyby.github.io/2017/07/24/create-a-blog-with-hugo/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": ""
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        
+        "url": "https://greyby.github.io/",
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": "Developer"
+        
+    },
+    "headline": "用 Hugo 搭建个人 Blog",
+    "name": "用 Hugo 搭建个人 Blog",
+    "wordCount":  262 ,
+    "timeRequired": "PT2M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": "en"
+    },
+    "url": "https://greyby.github.io/2017/07/24/create-a-blog-with-hugo/",
+    "datePublished": "2017-07-24T01:05Z",
+    "dateModified": "2017-07-24T01:05Z",
+    
+    
+    "description": "使用 Hugo 搭建个人 Blog, 通过 Travis 自动把文章发布到 Gihub Pages",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://greyby.github.io/2017/07/24/create-a-blog-with-hugo/"
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/about">About</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="https://github.com/greyby">Github Repos</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">用 Hugo 搭建个人 Blog</h1>
+        
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2017-07-24T01:05:44&#43;08:00">
+            Jul 24, 2017
+          </time>
+        
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<h2 id="为什么选择-hugo">为什么选择 Hugo</h2>
+
+<p>现在各种 Blog 系统实在太多了， 我在面对众多选择时主要考虑了三点:</p>
+
+<ol>
+<li><p>支持 Markdown</p>
+
+<p>把 <code>Markdown</code> 写的笔记心得之类的发出去， 是我个人 Blog 存在的主要目的。而且用所见即所得编辑器排版，效率不如写文章的时候就用 <code>Markdown</code> 排完版来的快</p></li>
+
+<li><p>尽量不需要依赖Markdown</p>
+
+<p>不想单独用 VPS 或者云主机，能直接放到<a href="https://pages.github.com/">Github Pages</a> 或者 <a href="https://pages.coding.net/">Coding Pages</a> 最好</p></li>
+
+<li><p>生成速度要快</p>
+
+<p>工具的效率决定人的效率，不能因为这个浪费时间。</p></li>
+</ol>
+
+<p>有前两点要求，直接排除了 <a href="https://medium.com/">Medium</a> 和 <a href="https://ghost.org/">Ghost</a>，只剩下静态网站生成工具了。 <code>Medium</code> 的编辑器做的很好用，但是不直接支持 <code>Markdown</code>。虽然可以通过第三方工具将 <code>Markdown</code> 写的文章导入，但感觉太麻烦，而且对表格的支持也不好。 <code>Ghost</code> 默认主题很漂亮，也支持 <code>Markdown</code>，但是依赖 <code>MySQL</code> 数据库，也只好放弃。</p>
+
+<p>静态网站生成工具是在本地安装程序，写文章后自动生成静态页面，静态页面可以直接放到 <code>web server</code> 上。所以用这类工具服务器上不需要什么依赖。静态网站生成工具被 <code>Github Pages</code>带火后，基本每种语言都有自己的实现。 <code>Ruby</code> 开发的 <a href="http://jekyllrb.com/">jekyll</a>、<a href="http://octopress.org/">Octopress</a>、<a href="https://middlemanapp.com/">Middleman</a>，<code>Node.js</code> 的<a href="https://hexo.io/">hexo</a>，<code>Go</code> 的<a href="http://gohugo.io/">hugo</a>。<code>jekyll</code> 和 <code>hexo</code>都被人诟病文章多了后生成速度太慢。虽然我有可能心血来潮写一篇就停止了，但是程序员总是要追求效率，所以最后选了 <code>hugo</code>。</p>
+
+<h2 id="安装">安装</h2>
+
+<p>macOS 下面，用 <code>brew</code> 安装大部分软件都是非常方便的。 <code>brew install hugo</code> 之后等着就好了。</p>
+
+<h2 id="使用">使用</h2>
+
+<h3 id="创建-blog">创建 Blog</h3>
+
+<p><code>hugo new site blogs -f yaml</code></p>
+
+<p><code>hugo</code> 默认使用 <code>TOML</code> 格式的配置文件，我个人还是更喜欢 <code>YAML</code>， 通过 <code>-f yaml</code> 可以指定使用 <code>YAML</code> 格式的配置文件。生成网站的默认目录如下</p>
+
+<pre><code>tree -L 1
+.
+├── archetypes
+├── config.yaml
+├── content
+├── data
+├── layouts
+├── static
+└── themes
+</code></pre>
+
+<p>其中比较重要的目录</p>
+
+<ul>
+<li><code>content</code> 放文章源文件<br /></li>
+<li><code>static</code> 生成的静态文件</li>
+<li><code>themes</code> 主题文件</li>
+</ul>
+
+<p>使用 <code>git</code> 管理网站源码</p>
+
+<pre><code>cd blogs
+git init
+git add .
+git commit -m 'initial commit'
+</code></pre>
+
+<h3 id="安装主题">安装主题</h3>
+
+<p>挺喜欢 <code>Ghost</code> 默认主题 <code>Casper</code>， 有人开发了 <code>Hugo</code> 的实现 <a href="https://github.com/vjeantet/hugo-theme-casper">https://github.com/vjeantet/hugo-theme-casper</a>。 把主题当作 <code>submodule</code> 管理，可以随时与主版本同步。</p>
+
+<pre><code>git submodule add https://github.com/greyby/hugo-theme-casper.git themes/casper
+git submodule update --remote
+</code></pre>
+
+<h3 id="创建文章">创建文章</h3>
+
+<p><code>hugo new post/2017-07-11-productive-macos-hammerspoon.md</code></p>
+
+<h3 id="发布文章">发布文章</h3>
+
+<p><code>hugo undraft content/post/2017-07-11-productive-macos-hammerspoon.md</code></p>
+
+<h3 id="运行">运行</h3>
+
+<p><code>hugo server --buildDrafts</code></p>
+
+<p>指定 <code>buildDrafts</code> 参数可以预览草稿箱文章</p>
+
+<h3 id="生成静态页面">生成静态页面</h3>
+
+<p>运行 <code>hugo</code>，生成的静态页面在 <code>static</code> 目录下</p>
+
+<h3 id="部署到-github-pages">部署到 Github Pages</h3>
+
+<p><code>Github Pages</code> 源文件可以配置成 <code>master</code> 分支、 <code>gh-pages</code> 分支或者 <code>master</code> 分支的 <code>docs</code> 目录。但是 <code>username.github.io</code> 这个 <code>repo</code> 比较特殊，只能使用 <code>master</code> 分支。为了方便，直接把 <code>public</code> 目录当作 <code>username.github.io</code> 的 <code>master</code> 分支，把网站的源代码放到 <code>source</code> 分支。</p>
+
+<pre><code>git submodule add https://github.com/greyby/greyby.github.io.git public
+git push --set-upstream origin source
+git push -u origin master
+</code></pre>
+
+<h3 id="travis-自动发布">travis 自动发布</h3>
+
+<p>每次发布新的文章，都要手动生成静态页面，然后将静态页面传到 <code>Github</code> 未免太过麻烦，借助持续集成工具 <code>travis</code>，可以做到有新文章提交后自动生成静态页面然后提交到 <code>master</code> 分支。</p>
+
+<ul>
+<li><p>安装 travis</p>
+
+<p>gem install travis</p></li>
+
+<li><p>创建 travis 配置文件</p>
+
+<p>touch .travis.yml， 内容参考<a href="https://github.com/greyby/greyby.github.io/blob/source/.travis.yml">.travis.yml</a></p></li>
+
+<li><p>登录 travis</p>
+
+<p><code>travis login --github-token</code></p>
+
+<p>开启两步认证的要通过 token 登录，需要的权限参考 <sup class="footnote-ref" id="fnref:github-authority"><a rel="footnote" href="#fn:github-authority">1</a></sup></p></li>
+
+<li><p>生成 RSA 密钥</p>
+
+<p><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code></p>
+
+<p>给密钥改名 <code>mv ~/.ssh/id_rsa ~/.ssh/travis_key</code></p></li>
+
+<li><p>生成加密文件 travis_key.enc</p>
+
+<p><code>travis encrypt-file ~/.ssh/travis_key --add</code></p></li>
+
+<li><p>发布脚本</p>
+
+<p>参考 <a href="https://github.com/greyby/greyby.github.io/blob/source/scripts/deploy.sh">deploy.sh</a></p></li>
+</ul>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:github-authority"><a href="https://docs.travis-ci.com/user/github-oauth-scopes/">Github 用户权限</a>
+ <a class="footnote-return" href="#fnref:github-authority"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+    
+
+
+
+
+
+<section class="author">
+  <h4><a href="https://greyby.github.io/">greyby</a></h4>
+  
+  <p>Developer</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Beijing, China</span>
+    <span class="author-link icon-link"><a href="https://greyby.github.io/">https://greyby.github.io/</a></span>
+  </div>
+</section>
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=%e7%94%a8%20Hugo%20%e6%90%ad%e5%bb%ba%e4%b8%aa%e4%ba%ba%20Blog&nbsp;-&nbsp;%e6%89%be%e4%b8%8d%e7%9d%80%e5%8c%97&amp;url=https%3a%2f%2fgreyby.github.io%2f2017%2f07%2f24%2fcreate-a-blog-with-hugo%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fgreyby.github.io%2f2017%2f07%2f24%2fcreate-a-blog-with-hugo%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fgreyby.github.io%2f2017%2f07%2f24%2fcreate-a-blog-with-hugo%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'greyby';
+  var disqus_url = 'https:\/\/greyby.github.io\/2017\/07\/24\/create-a-blog-with-hugo\/';
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="/2017/07/11/productive-macos-hammerspoon/">
+          <section class="post">
+              <h2>打造 macOS 的生产力环境 - Hammerspoon</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">找不着北</a> © 2017</section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+    
+</body>
+</html>
+
