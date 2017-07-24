@@ -133,6 +133,9 @@ git push -u origin master
 	
 	`travis encrypt-file ~/.ssh/travis_key --add`
 
+* 在 Github 上给项目添加 `deploy key`
+	
+
 * 发布脚本
 
 	参考 [deploy.sh](https://github.com/greyby/greyby.github.io/blob/source/scripts/deploy.sh)
