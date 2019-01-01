@@ -98,6 +98,7 @@ git submodule update --remote
 ```
 git submodule add https://github.com/greyby/greyby.github.io.git public
 git push --set-upstream origin source
+cd public
 git push -u origin master
 ```
 
