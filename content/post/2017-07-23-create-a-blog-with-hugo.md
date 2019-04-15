@@ -9,11 +9,11 @@ description: "使用 Hugo 搭建个人 Blog, 通过 Travis 自动把文章发布
 
 现在各种 Blog 系统实在太多了， 我在面对众多选择时主要考虑了三点:
 
-1. 支持 Markdown
+1. 支持 `Markdown`
 
 	把 `Markdown` 写的笔记心得之类的发出去， 是我个人 Blog 存在的主要目的。而且用所见即所得编辑器排版，效率不如写文章的时候就用 `Markdown` 排完版来的快
 
-2. 尽量不需要依赖Markdown
+2. 尽量不需要外部依赖
 
 	不想单独用 VPS 或者云主机，能直接放到[Github Pages](https://pages.github.com/) 或者 [Coding Pages](https://pages.coding.net/) 最好
 
