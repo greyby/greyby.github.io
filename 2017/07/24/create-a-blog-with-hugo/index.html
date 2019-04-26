@@ -51,7 +51,7 @@
       
       
     
-    <meta name="generator" content="Hugo 0.26-DEV" />
+    <meta name="generator" content="Hugo 0.55.1" />
 
     <link rel="canonical" href="https://greyby.github.io/2017/07/24/create-a-blog-with-hugo/" />
 
@@ -64,13 +64,13 @@
     "@type": "Article",
     "publisher": {
         "@type": "Organization",
-        "name": 
+        "name":  null 
     },
     "author": {
         "@type": "Person",
-        "name": ,
+        "name":  null ,
         
-        "url": https://greyby.github.io/,
+        "url": "https://greyby.github.io/",
         "sameAs": [
             
             
@@ -81,26 +81,26 @@
              
             
         ],
-        "description": Developer
+        "description": "Developer"
         
     },
-    "headline": 用 Hugo 搭建个人 Blog,
-    "name": 用 Hugo 搭建个人 Blog,
-    "wordCount": 267,
+    "headline": "用 Hugo 搭建个人 Blog",
+    "name": "用 Hugo 搭建个人 Blog",
+    "wordCount":  331 ,
     "timeRequired": "PT2M",
     "inLanguage": {
       "@type": "Language",
-      "alternateName": en
+      "alternateName": "en"
     },
-    "url": https://greyby.github.io/2017/07/24/create-a-blog-with-hugo/,
-    "datePublished": 2017-07-24T01:05Z,
-    "dateModified": 2017-07-24T01:05Z,
+    "url": "https://greyby.github.io/2017/07/24/create-a-blog-with-hugo/",
+    "datePublished": "2017-07-24T01:05Z",
+    "dateModified": "2017-07-24T01:05Z",
     
     
-    "description": 使用 Hugo 搭建个人 Blog, 通过 Travis 自动把文章发布到 Gihub Pages,
+    "description": "使用 Hugo 搭建个人 Blog, 通过 Travis 自动把文章发布到 Gihub Pages",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": https://greyby.github.io/2017/07/24/create-a-blog-with-hugo/
+        "@id": "https://greyby.github.io/2017/07/24/create-a-blog-with-hugo/"
     }
 }
     </script>
@@ -196,11 +196,11 @@
 <p>现在各种 Blog 系统实在太多了， 我在面对众多选择时主要考虑了三点:</p>
 
 <ol>
-<li><p>支持 Markdown</p>
+<li><p>支持 <code>Markdown</code> 格式</p>
 
 <p>把 <code>Markdown</code> 写的笔记心得之类的发出去， 是我个人 Blog 存在的主要目的。而且用所见即所得编辑器排版，效率不如写文章的时候就用 <code>Markdown</code> 排完版来的快</p></li>
 
-<li><p>尽量不需要依赖Markdown</p>
+<li><p>尽量不需要外部依赖</p>
 
 <p>不想单独用 VPS 或者云主机，能直接放到<a href="https://pages.github.com/">Github Pages</a> 或者 <a href="https://pages.coding.net/">Coding Pages</a> 最好</p></li>
 
@@ -211,7 +211,7 @@
 
 <p>有前两点要求，直接排除了 <a href="https://medium.com/">Medium</a> 和 <a href="https://ghost.org/">Ghost</a>，只剩下静态网站生成工具了。 <code>Medium</code> 的编辑器做的很好用，但是不直接支持 <code>Markdown</code>。虽然可以通过第三方工具将 <code>Markdown</code> 写的文章导入，但感觉太麻烦，而且对表格的支持也不好。 <code>Ghost</code> 默认主题很漂亮，也支持 <code>Markdown</code>，但是依赖 <code>MySQL</code> 数据库，也只好放弃。</p>
 
-<p>静态网站生成工具是在本地安装程序，写文章后自动生成静态页面，静态页面可以直接放到 <code>web server</code> 上。所以用这类工具服务器上不需要什么依赖。静态网站生成工具被 <code>Github Pages</code>带火后，基本每种语言都有自己的实现。 <code>Ruby</code> 开发的 <a href="http://jekyllrb.com/">jekyll</a>、<a href="http://octopress.org/">Octopress</a>、<a href="https://middlemanapp.com/">Middleman</a>，<code>Node.js</code> 的<a href="https://hexo.io/">hexo</a>，<code>Go</code> 的<a href="http://gohugo.io/">hugo</a>。<code>jekyll</code> 和 <code>hexo</code>都被人诟病文章多了后生成速度太慢。虽然我有可能心血来潮写一篇就停止了，但是程序员总是要追求效率，所以最后选了 <code>hugo</code>。</p>
+<p>静态网站生成工具是在本地安装程序，写文章后自动生成静态页面，静态页面可以直接放到 <code>web server</code> 上。所以用这类工具服务器上不需要什么依赖。静态网站生成工具被 <code>Github Pages</code>带火后，基本每种编程语言都有自己的实现。 <code>Ruby</code> 开发的 <a href="http://jekyllrb.com/">jekyll</a>、<a href="http://octopress.org/">Octopress</a>、<a href="https://middlemanapp.com/">Middleman</a>，<code>Node.js</code> 的 <a href="https://hexo.io/">hexo</a>，<code>Go</code> 的<a href="http://gohugo.io/">hugo</a>。<code>jekyll</code> 和 <code>hexo</code>都被人诟病文章多了后生成速度太慢。虽然我有可能心血来潮写一篇就停止了，但是程序员总是要追求效率，所以最后选了 <code>hugo</code>。</p>
 
 <h2 id="安装">安装</h2>
 
@@ -239,89 +239,117 @@
 <p>其中比较重要的目录</p>
 
 <ul>
-<li><code>content</code> 放文章源文件<br /></li>
+<li><code>content</code> 放文章源文件</li>
 <li><code>static</code> 生成的静态文件</li>
 <li><code>themes</code> 主题文件</li>
 </ul>
 
 <p>使用 <code>git</code> 管理网站源码</p>
 
-<pre><code>cd blogs
+<pre><code class="language-shell">cd blogs
 git init
 git add .
 git commit -m 'initial commit'
+git checkout -b source
+# 下面会说到 master 另有它用
+git branch -d master
 </code></pre>
 
 <h3 id="安装主题">安装主题</h3>
 
-<p>挺喜欢 <code>Ghost</code> 默认主题 <code>Casper</code>， 有人开发了 <code>Hugo</code> 的实现 <a href="https://github.com/vjeantet/hugo-theme-casper">https://github.com/vjeantet/hugo-theme-casper</a>。 把主题当作 <code>submodule</code> 管理，可以随时与主版本同步。</p>
+<p>挺喜欢 <code>Ghost</code> 默认主题 <code>Casper</code>， 有人开发了 <code>Hugo</code> 的实现 <a href="https://github.com/vjeantet/hugo-theme-casper">https://github.com/vjeantet/hugo-theme-casper</a>。 把主题当作 <code>submodule</code> 管理，可以随时与主版本同步。需要根据主题提供的参考代码调整配置 <code>config.yaml</code>。</p>
 
-<pre><code>git submodule add https://github.com/greyby/hugo-theme-casper.git themes/casper
+<pre><code class="language-shell">git submodule add https://github.com/greyby/hugo-theme-casper.git themes/casper
 git submodule update --remote
 </code></pre>
 
-<h3 id="创建文章">创建文章</h3>
+<h3 id="发布文章">发布文章</h3>
 
 <p><code>hugo new post/2017-07-11-productive-macos-hammerspoon.md</code></p>
 
-<h3 id="发布文章">发布文章</h3>
-
-<p><code>hugo undraft content/post/2017-07-11-productive-macos-hammerspoon.md</code></p>
-
 <h3 id="运行">运行</h3>
 
-<p><code>hugo server --buildDrafts</code></p>
+<p><code>hugo server -t casper</code></p>
 
-<p>指定 <code>buildDrafts</code> 参数可以预览草稿箱文章</p>
+<p>访问 <a href="http://localhost:1313/">http://localhost:1313/</a> 可以预览</p>
 
 <h3 id="生成静态页面">生成静态页面</h3>
 
-<p>运行 <code>hugo</code>，生成的静态页面在 <code>static</code> 目录下</p>
+<p>运行 <code>hugo -t casper</code>，生成的静态页面在 <code>public</code> 目录下</p>
 
 <h3 id="部署到-github-pages">部署到 Github Pages</h3>
 
-<p><code>Github Pages</code> 源文件可以配置成 <code>master</code> 分支、 <code>gh-pages</code> 分支或者 <code>master</code> 分支的 <code>docs</code> 目录。但是 <code>username.github.io</code> 这个 <code>repo</code> 比较特殊，只能使用 <code>master</code> 分支。为了方便，直接把 <code>public</code> 目录当作 <code>username.github.io</code> 的 <code>master</code> 分支，把网站的源代码放到 <code>source</code> 分支。</p>
+<p>Github Pages 有  <a href="https://help.github.com/en/articles/user-organization-and-project-pages#user-and-organization-pages-sites"><code>User/Organization Pages</code></a> 和 <a href="https://help.github.com/en/articles/user-organization-and-project-pages#project-pages-sites"><code>Project Pages</code></a> 两种类型。<code>User/Organization Pages</code> 可以通过 <code>https://&lt;username&gt;.github.io</code> 直接访问。网站的静态文件放在 <code>&lt;username&gt;.github.io</code> 仓库的 <code>master</code>分支。为了方便，直接把 <code>public</code> 目录当作 <code>&lt;username&gt;.github.io</code> 的 <code>master</code> 分支，把 hugo 生成的网站代码放到 <code>source</code> 分支。这样就能用  <code>&lt;username&gt;.github.io</code>  一个仓库对 blog 的源码及生成的静态文件进行管理。</p>
 
-<pre><code>git submodule add https://github.com/greyby/greyby.github.io.git public
-git push --set-upstream origin source
+<ul>
+<li>master</li>
+</ul>
+
+<p>生成的静态文件</p>
+
+<ul>
+<li>source</li>
+</ul>
+
+<p>网站的源码</p>
+
+<pre><code class="language-shell">git remote add origin https://github.com/greyby/greyby.github.io.git
+git push -u origin source
+
+git submodule add https://github.com/greyby/greyby.github.io.git public
+cd public
 git push -u origin master
 </code></pre>
 
 <h3 id="travis-自动发布">travis 自动发布</h3>
 
-<p>每次发布新的文章，都要手动生成静态页面，然后将静态页面传到 <code>Github</code> 未免太过麻烦，借助持续集成工具 <code>travis</code>，可以做到有新文章提交后自动生成静态页面然后提交到 <code>master</code> 分支。</p>
+<p>每次发布新的文章，都要手动生成静态页面，然后将静态页面传到 <code>Github</code> 未免太过麻烦，借助持续集成工具 <code>travis</code>，可以做到有新文章提交后自动生成静态页面然后推送到 <code>master</code> 分支。<code>travis</code> 通过数字签名的方式来实现 <code>Github</code> 的免密码登录和 <code>push</code> 权限获取。</p>
+
+<p>先登录 <a href="https://travis-ci.org/">https://travis-ci.org/</a>  并激活项目 <code>&lt;username&gt;.github.io</code>。</p>
 
 <ul>
-<li><p>安装 travis</p>
+<li>安装 <code>travis</code> 并登录</li>
+</ul>
 
-<p>gem install travis</p></li>
-
-<li><p>创建 travis 配置文件</p>
-
-<p>touch .travis.yml， 内容参考<a href="https://github.com/greyby/greyby.github.io/blob/source/.travis.yml">.travis.yml</a></p></li>
-
-<li><p>登录 travis</p>
+<p><code>gem install travis</code></p>
 
 <p><code>travis login --github-token</code></p>
 
-<p>开启两步认证的要通过 token 登录，需要的权限参考 <sup class="footnote-ref" id="fnref:github-authority"><a rel="footnote" href="#fn:github-authority">1</a></sup></p></li>
+<p><code>Github</code> 开启两步认证的要通过 token 登录，需要的权限参考 <sup class="footnote-ref" id="fnref:github-authority"><a href="#fn:github-authority">1</a></sup></p>
 
-<li><p>生成 RSA 密钥</p>
-
-<p><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code></p>
-
-<p>给密钥改名 <code>mv ~/.ssh/id_rsa ~/.ssh/travis_key</code></p></li>
-
-<li><p>生成加密文件 travis_key.enc</p>
-
-<p><code>travis encrypt-file ~/.ssh/travis_key --add</code></p></li>
-
-<li><p>在 Github 上给项目添加 <code>deploy key</code></p></li>
-
-<li><p>发布脚本</p>
-
-<p>参考 <a href="https://github.com/greyby/greyby.github.io/blob/source/scripts/deploy.sh">deploy.sh</a></p></li>
+<ul>
+<li>生成 RSA 密钥</li>
 </ul>
+
+<p><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot; -f ~/.ssh/travis_key</code></p>
+
+<p>​   会生成公私钥对  <code>travis_key.pub</code> 和  <code>travis_key</code></p>
+
+<ul>
+<li>生成加密文件<code>travis_key.enc</code></li>
+</ul>
+
+<p>为了防止私钥的泄露，使用 <code>travis</code> 提供的工具将私钥加密，在 repo 根目录执行</p>
+
+<pre><code class="language-shell">  touch .travis.yml
+  travis encrypt-file ~/.ssh/travis_key --add
+</code></pre>
+
+<p>私钥加密后生成 <code>travis_key.enc</code>文件，并将解密的命令自动写入 <code>.travis.yml</code> 中。再调整配置满足自动发布文章，内容参考<a href="https://github.com/greyby/greyby.github.io/blob/source/.travis.yml">.travis.yml</a></p>
+
+<ul>
+<li>在 Github 上给项目添加 <code>deploy key</code></li>
+</ul>
+
+<p>为了让 <code>travis</code> 有 push 权限，在项目的 <code>Settings -&gt; Deploy keys</code> 新增，将公钥 <code>travis_key.pub</code> 的内容拷贝进去</p>
+
+<ul>
+<li>发布脚本</li>
+</ul>
+
+<p>参考 <a href="https://github.com/greyby/greyby.github.io/blob/source/scripts/deploy.sh">deploy.sh</a></p>
+
+<p>这样 <code>source</code> 分支有 push ，就会触发 <code>travis</code>自动部署网站。</p>
 <div class="footnotes">
 
 <hr />
