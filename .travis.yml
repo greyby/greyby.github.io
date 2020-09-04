@@ -1,9 +1,9 @@
-dist: xenial
+dist: focal
 
 language: go
 
 go:
-  - 1.12.4
+  - 1.15
 
 branches:
   only:
