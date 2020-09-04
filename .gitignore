@@ -85,4 +85,7 @@ GitHub.sublime-settings
 !.vscode/launch.json
 !.vscode/extensions.json
 
+node_modules/
+package.json
+yarn.lock
 # End of https://www.gitignore.io/api/go,hugo,macos,sublimetext,visualstudiocode
