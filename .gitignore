@@ -85,6 +85,7 @@ GitHub.sublime-settings
 !.vscode/launch.json
 !.vscode/extensions.json
 
+resources/
 node_modules/
 package.json
 yarn.lock
